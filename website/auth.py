@@ -13,6 +13,7 @@ def sign_up():
         fname = request.form.get('firstName')
         pass1 = request.form.get('password1')
         pass2 = request.form.get('password2')
+        about = request.form.get('about')
         user = User.query.filter_by(email=email).first()
         if user:
             flash('This email address is already registered!', category='error')        
@@ -25,10 +26,13 @@ def sign_up():
         elif pass1 != pass2:
             flash('Passwords do not match!', category='error')
         else:
-            new_user = User(email = email, first_name = fname, password = generate_password_hash(pass1, method='sha256'))
+            new_user = User(email = email, first_name = fname, password = generate_password_hash(pass1, method='sha256'), about = about)
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            try:
+                login_user(user, remember=True, force=True)
+            except Exception as e:
+                print(e)
             flash('Account created', category='success')
             return redirect(url_for('views.home'))
     return render_template('sign_up.html', user=current_user)

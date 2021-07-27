@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content%}
+<h1 style='text-align:center;'>User ID #{{ user.id }}: {{ user.first_name }}</h1>
+<p style='text-align:center;'>Email: {{ user.email }}</p>
+<p style='text-align:center;'>{{ user.about }}</p>
+<p style='text-align:center;'>
+    <button type="button" class="close" onclick="deleteUser({{ user.id }})">
+    <span aria-hidden="true">&times; Delete Account</span>
+    </button>
+</p>
+{% endblock %}
