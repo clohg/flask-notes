@@ -1,5 +1,5 @@
 # flask-notes
-Get the source code for running a local Python and Flask website using Bootstrap to store and manage your notes, also available as a Docker container.
+Get the source code and ready Docker container image for running a local Python and Flask website using Bootstrap to store and manage your notes.
 
 [![Docker](https://github.com/clohg/flask-notes/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/clohg/flask-notes/actions/workflows/docker-publish.yml)
 
