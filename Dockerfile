@@ -7,3 +7,4 @@ COPY website/*.py website/
 COPY website/templates/*.html website/templates/
 COPY website/static/*.js website/static/
 CMD [ "pipenv", "run", "python", "-m", "flask", "run", "--host=0.0.0.0" ]
+EXPOSE 5000
