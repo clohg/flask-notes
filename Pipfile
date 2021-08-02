@@ -1,7 +1,7 @@
 [packages]
 flask = "*"
-werkzeug.security = "*"
+werkzeug = "*"
 flask_login = "*"
 flask_sqlalchemy = "*"
-sqlalchemy.sql = "*"
+sqlalchemy = "*"
 jsonify = "*"
